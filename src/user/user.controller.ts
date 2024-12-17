@@ -53,12 +53,4 @@ export class UserController {
   login(@Body() loginDto: LoginDto) {
     return this.userService.login(loginDto);
   }
-
-  @Get("ddd")
-  @UseGuards(AuthGuard)
-  aaaa(@Req() request: any) {
-    const payload = request["user"];
-    return this.userService.getCurrentUser(payload.id)
-  }
-  
 }

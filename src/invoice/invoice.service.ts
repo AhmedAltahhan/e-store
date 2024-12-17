@@ -15,11 +15,8 @@ export class InvoiceService {
     return data;
   }
      
-  findAll(page: number, perPage: number, userId: number) {
+  findAll(page: number, perPage: number) {
     const data = this.invoiceRepo.find({
-      where: {
-        user: { id: userId }, 
-      },
       skip: perPage * (page - 1),
       take: perPage,
     });
